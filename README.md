@@ -48,3 +48,7 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 Author(s):
 
 © 2015 Kasra Madadipouya <kasra@madadipouya.com>
+=======
+# telegram-hknc-bot
+Telegram BOT for HKNC 
+
