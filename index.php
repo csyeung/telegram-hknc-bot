@@ -26,32 +26,34 @@ $update = json_decode($content);
 
 // Application Starts Here
 try {
+  $text = $update->message->text;
+  $chatId = $update->message->chat->id;
 
-    if ($update->message->text == '/email')
+    if (strpos($text, '/email') !== false)
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-        	'chat_id' => $update->message->chat->id,
+        	'chat_id' => $chatId,
         	'text' => "You can send email to : psycohk@hotmail.com"
      	]);
     }
-    else if ($update->message->text == '/fuckoff')
+    else if (strpos($text, '/fuckoff') !== false)
     {
-      $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' =>
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' =>
       'typing']);
-      $response = $client->sendMessage(['chat_id' => $update->message->chat->id, 'text' => "你老母可否安好﹗"]);
+      $response = $client->sendMessage(['chat_id' => $chatId, 'text' => "你老母可否安好﹗"]);
     }
-    else if ($update->message->text == '/help')
+    else if (strpos($text, '/help') !== false)
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
+    		'chat_id' => $chatId,
     		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog
     		/help -> Shows list of available commands"
     		]);
 
     }
-    else if ($update->message->text == '/latest')
+    else if (strpos($text, '/latest') !== false)
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
@@ -61,18 +63,26 @@ try {
 			$lastlink 	= $lastitem->link;
 			$lasttitle 	= $lastitem->title;
 			$message = $lasttitle . " \n ". $lastlink;
-			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+			$response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
 			$response = $client->sendMessage([
-					'chat_id' => $update->message->chat->id,
+					'chat_id' => $chatId,
 					'text' => $message
 				]);
 
     }
+    else if (strpos($text, '早晨') !== false)
+    {
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $chatId,
+    		'text' => "各位谷友早晨"
+    		]);
+    }
     else
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
+    		'chat_id' => $chatId,
     		'text' => "Invalid command, please use /help to get list of available commands"
     		]);
     }
