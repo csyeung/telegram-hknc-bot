@@ -19,6 +19,11 @@
 */
 require 'vendor/autoload.php';
 
+$client = new Zelenin\Telegram\Bot\Api('421429408:AAG3zXljBxWbCPr6XIeLZ3jUU0p1_djolDU'); // Set your access token
+$url = 'https://rss-weather.yahoo.co.jp/rss/days/4310.xml'; // URL RSS feed
+$content = file_get_contents('php://input');
+$update = json_decode($content, true);
+
 function processMessage($message)
 {
   // Process Incoming Message and commands
@@ -89,11 +94,6 @@ function processMessage($message)
       ]);
   }
 }
-
-$client = new Zelenin\Telegram\Bot\Api('421429408:AAG3zXljBxWbCPr6XIeLZ3jUU0p1_djolDU'); // Set your access token
-$url = 'https://rss-weather.yahoo.co.jp/rss/days/4310.xml'; // URL RSS feed
-$content = file_get_contents('php://input');
-$update = json_decode($content, true);
 
 //your app
 try {
