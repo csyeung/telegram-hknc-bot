@@ -48,8 +48,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $chatId,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog
-    		/help -> Shows list of available commands"
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog \n /help -> Shows list of available commands"
     		]);
 
     }
