@@ -69,7 +69,7 @@ try {
 				]);
 
     }
-    else if ((strpos($text, '早晨') !== false) || strpos($text, '晚安'))
+    else if (strpos($text, '早晨') !== false || strpos($text, '晚安') !== false || strpos($text, '午安') !== false)
     {
       $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
