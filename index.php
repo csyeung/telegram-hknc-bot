@@ -37,26 +37,26 @@ function processMessage($message)
 
     if (strpos($text, "/help") === 0)
     {
-      $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
+    		'chat_id' => $chatId,
     		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog
     		/help -> Shows list of available commands"
     		]);
     }
     else if (strpos($text, "/email") === 0)
     {
-      $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-        	'chat_id' => $update->message->chat->id,
+        	'chat_id' => $chatId,
         	'text' => "You can send email to : psycohk@hotmail.com"
      	]);
     }
     else if (strpos($text, "/fuckoff") === 0)
     {
-      $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-        	'chat_id' => $update->message->chat->id,
+        	'chat_id' => $chatId,
         	'text' => "你老母可否安好？"
      	]);
     }
@@ -70,26 +70,26 @@ function processMessage($message)
     $lastlink 	= $lastitem->link;
     $lasttitle 	= $lastitem->title;
     $message = $lasttitle . " \n ". $lastlink;
-    $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     $response = $client->sendMessage([
-        'chat_id' => $update->message->chat->id,
+        'chat_id' => $chatId,
         'text' => $message
       ]);
     }
     else
     {
-      $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
+    		'chat_id' => $chatId,
     		'text' => "Invalid command, please use /help to get list of available commands"
     		]);
     }
   }
   else
   {
-    $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     $response = $client->sendMessage([
-      'chat_id' => $update->message->chat->id,
+      'chat_id' => $chatId,
       'text' => "Invalid command, please use /help to get list of available commands"
       ]);
   }
