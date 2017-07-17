@@ -69,12 +69,12 @@ try {
 				]);
 
     }
-    else if (strpos($text, '早晨') !== false)
+    else if ((strpos($text, '早晨') !== false) || strpos($text, '晚安'))
     {
       $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $chatId,
-    		'text' => "各位谷友早晨"
+    		'text' => "各位谷友".$text
     		]);
     }
     else
