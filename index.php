@@ -6,7 +6,7 @@
 * GeeksWeb Bot (GWB) is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License version 3
 * as published by the Free Software Foundation.
-* 
+*
 * GeeksWeb Bot (GWB) is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -31,7 +31,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "You can send email to : Kasra@madadipouya.com"
+        	'text' => "You can send email to : psycohk@hotmail.com"
      	]);
     }
     else if($update->message->text == '/help')
@@ -39,7 +39,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog
     		/help -> Shows list of available commands"
     		]);
 
@@ -60,6 +60,12 @@ try {
 					'text' => $message
 				]);
 
+    }
+    else if($update->message->test == '/fuckoff')
+    {
+      $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' =>
+      'typing']);
+      $response = $client->sendMessage(['chat_id' => $update->message->chat->id, 'text' => "你老母可否安好﹗"]);
     }
     else
     {
