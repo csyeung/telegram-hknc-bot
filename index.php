@@ -21,12 +21,13 @@ require 'vendor/autoload.php';
 
 $client = new Zelenin\Telegram\Bot\Api('421429408:AAG3zXljBxWbCPr6XIeLZ3jUU0p1_djolDU'); // Set your access token
 $url = 'https://rss-weather.yahoo.co.jp/rss/days/4310.xml'; // URL RSS feed
-$update = json_decode(file_get_contents('php://input'));
+$content = file_get_contents('php://input');
+$update = json_decode($content);
 
-//your app
+// Application Starts Here
 try {
 
-    if($update->message->text == '/email')
+    if ($update->message->text == '/email')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
@@ -34,13 +35,13 @@ try {
         	'text' => "You can send email to : psycohk@hotmail.com"
      	]);
     }
-    else if($update->message->test == '/fuckoff')
+    else if ($update->message->text == '/fuckoff')
     {
       $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' =>
       'typing']);
       $response = $client->sendMessage(['chat_id' => $update->message->chat->id, 'text' => "你老母可否安好﹗"]);
     }
-    else if($update->message->text == '/help')
+    else if ($update->message->text == '/help')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
@@ -50,7 +51,7 @@ try {
     		]);
 
     }
-    else if($update->message->text == '/latest')
+    else if ($update->message->text == '/latest')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
