@@ -4,9 +4,119 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "482c6611d14a450560d0bd2c091820bc",
-    "content-hash": "b32284520664458032b5c01fd878bca7",
+    "content-hash": "07c21dfffeea8409a8ced92155e92710",
     "packages": [
+        {
+            "name": "alrik11es/cowsayphp",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alrik11es/cowsayphp.git",
+                "reference": "080dc10c8f5420fef35163569293601f17124eeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alrik11es/cowsayphp/zipball/080dc10c8f5420fef35163569293601f17124eeb",
+                "reference": "080dc10c8f5420fef35163569293601f17124eeb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "bin": [
+                "bin/cowsayphp"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cowsayphp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcos Sigueros",
+                    "email": "alrik11es@gmail.com",
+                    "homepage": "https://github.com/alrik11es",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cowsay port in PHP",
+            "homepage": "https://github.com/alrik11es/cowsayphp",
+            "keywords": [
+                "cowsay"
+            ],
+            "time": "2016-08-25T07:53:44+00:00"
+        },
+        {
+            "name": "amphp/amp",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amphp/amp.git",
+                "reference": "4f2161da5f68f274f116985635aea63b5c0f54d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amphp/amp/zipball/4f2161da5f68f274f116985635aea63b5c0f54d2",
+                "reference": "4f2161da5f68f274f116985635aea63b5c0f54d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "~1.9",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Amp\\": "lib/"
+                },
+                "files": [
+                    "lib/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Lowrey",
+                    "email": "rdlowrey@php.net",
+                    "role": "Creator / Lead Developer"
+                }
+            ],
+            "description": "A non-blocking concurrency framework for PHP applications",
+            "homepage": "https://github.com/amphp/amp",
+            "keywords": [
+                "async",
+                "concurrency",
+                "event",
+                "non-blocking",
+                "promise"
+            ],
+            "time": "2016-05-12T12:54:59+00:00"
+        },
         {
             "name": "dg/rss-php",
             "version": "v1.2",
@@ -47,36 +157,39 @@
                 "feed",
                 "rss"
             ],
-            "time": "2015-07-02 11:54:05"
+            "time": "2015-07-02T11:54:05+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.1.0",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "66fd14b4d0b8f2389eaf37c5458608c7cb793a81"
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/66fd14b4d0b8f2389eaf37c5458608c7cb793a81",
-                "reference": "66fd14b4d0b8f2389eaf37c5458608c7cb793a81",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/promises": "~1.0",
-                "guzzlehttp/psr7": "~1.1",
-                "php": ">=5.5.0"
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "~4.0",
-                "psr/log": "~1.0"
+                "phpunit/phpunit": "^4.0 || ^5.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.1-dev"
+                    "dev-master": "6.2-dev"
                 }
             },
             "autoload": {
@@ -109,32 +222,32 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-09-08 17:36:26"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.2",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "97fe7210def29451ec74923b27e552238defd75a"
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/97fe7210def29451ec74923b27e552238defd75a",
-                "reference": "97fe7210def29451ec74923b27e552238defd75a",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -160,20 +273,20 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-08-15 19:37:21"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.0",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "4ef919b0cf3b1989523138b60163bbcb7ba1ff7e"
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4ef919b0cf3b1989523138b60163bbcb7ba1ff7e",
-                "reference": "4ef919b0cf3b1989523138b60163bbcb7ba1ff7e",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +302,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -209,29 +322,36 @@
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
-            "description": "PSR-7 message implementation",
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
                 "http",
                 "message",
+                "request",
+                "response",
                 "stream",
-                "uri"
+                "uri",
+                "url"
             ],
-            "time": "2015-08-15 19:32:36"
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "psr/http-message",
-            "version": "1.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "shasum": ""
             },
             "require": {
@@ -259,6 +379,7 @@
                 }
             ],
             "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
             "keywords": [
                 "http",
                 "http-message",
@@ -267,24 +388,29 @@
                 "request",
                 "response"
             ],
-            "time": "2015-05-04 20:22:00"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "zelenin/telegram-bot-api",
-            "version": "0.0.4",
+            "version": "0.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zelenin/telegram-bot-api.git",
-                "reference": "3d1144d0288a2c89faef4f10d3412da651c98625"
+                "reference": "b82683a28ee47ee5bc933f398a8b0fe170beedc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zelenin/telegram-bot-api/zipball/3d1144d0288a2c89faef4f10d3412da651c98625",
-                "reference": "3d1144d0288a2c89faef4f10d3412da651c98625",
+                "url": "https://api.github.com/repos/zelenin/telegram-bot-api/zipball/b82683a28ee47ee5bc933f398a8b0fe170beedc1",
+                "reference": "b82683a28ee47ee5bc933f398a8b0fe170beedc1",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "~6"
+                "amphp/amp": "~1.0",
+                "guzzlehttp/guzzle": "~6",
+                "php": ">=5.5.0"
+            },
+            "suggest": {
+                "ext/pcntl": "Usage of signal handler"
             },
             "type": "library",
             "autoload": {
@@ -310,7 +436,7 @@
                 "bot",
                 "telegram"
             ],
-            "time": "2015-06-29 01:40:01"
+            "time": "2016-03-15T07:00:07+00:00"
         }
     ],
     "packages-dev": [],
