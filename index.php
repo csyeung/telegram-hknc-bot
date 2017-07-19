@@ -77,7 +77,15 @@ try {
     		'text' => "各位谷友".$text
     		]);
     }
-    else
+    else if (strpos($text, '/chou') !== false)
+    {
+      $response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $chatId,
+    		'text' => "Best retard,\nChou"
+    		]);
+    }
+    else if (strpos($text, '/dummy') !== false)
     {
     	$response = $client->sendChatAction(['chat_id' => $chatId, 'action' => 'typing']);
     	$response = $client->sendMessage([
